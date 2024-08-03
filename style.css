@@ -74,7 +74,23 @@ ol{
 li{
     padding: 5px;
     list-style: decimal inside none;
-
+}
 li:nth-child(odd){
     background-color: #dfdae7;
-}}
+}
+@media screen and (max-width: 768px) {
+    .containerNew {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .containerNew {
+        width: 90%;
+    }
+
+    .quiz,
+    .scores {
+        max-width: 90%;
+    }
+}
