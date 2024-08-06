@@ -81,3 +81,29 @@ let feedbackEl = document.querySelector(
 );
 let reStartBtn =
     document.querySelector("#restart");
+// Quiz's initial state
+let currentQuestionIndex = 0;
+let time = questions.length * 15;
+let timerId;
+
+// Start quiz and hide frontpage
+
+function quizStart() {
+    timerId = setInterval(
+        clockTick,
+        1000
+    );
+    timerEl.textContent = time;
+    let landingScreenEl =
+        document.getElementById(
+            "start-screen"
+        );
+    landingScreenEl.setAttribute(
+        "class",
+        "hide"
+    );
+    questionsEl.removeAttribute(
+        "class"
+    );
+    getQuestion();
+}
